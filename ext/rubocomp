@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require "rubocomp"
+Rubocomp::Runner.new.execute(ARGV)

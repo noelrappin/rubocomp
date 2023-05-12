@@ -1,0 +1,39 @@
+Bundler/GemComment:
+  Description: Add a comment describing each gem.
+  Enabled: false
+  VersionAdded: '0.59'
+  VersionChanged: '0.85'
+  Include:
+    - "**/*.gemfile"
+    - "**/Gemfile"
+    - "**/gems.rb"
+  IgnoredGems: []
+  OnlyFor: []
+
+Bundler/GemFilename:
+  Description: Enforces the filename for managing gems.
+  Enabled: true
+  VersionAdded: '1.20'
+  EnforcedStyle: Gemfile
+  SupportedStyles:
+    - Gemfile
+    - gems.rb
+  Include:
+    - "**/Gemfile"
+    - "**/gems.rb"
+    - "**/Gemfile.lock"
+    - "**/gems.locked"
+
+Bundler/GemVersion:
+  Description: Requires or forbids specifying gem versions.
+  Enabled: false
+  VersionAdded: '1.14'
+  EnforcedStyle: required
+  SupportedStyles:
+    - required
+    - forbidden
+  Include:
+    - "**/*.gemfile"
+    - "**/Gemfile"
+    - "**/gems.rb"
+  AllowedGems: []

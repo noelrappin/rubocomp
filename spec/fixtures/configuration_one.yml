@@ -1,0 +1,38 @@
+# Available cops (531) + config for /Users/noel/projects/github/rubocomp:
+# Department 'Bundler' (6):
+Bundler/DuplicatedGem:
+  Description: Checks for duplicate gem entries in Gemfile.
+  Enabled: true
+  Severity: warning
+  VersionAdded: '0.46'
+  VersionChanged: '1.40'
+  Include:
+    - "**/*.gemfile"
+    - "**/Gemfile"
+    - "**/gems.rb"
+
+Bundler/GemComment:
+  Description: Add a comment describing each gem.
+  Enabled: false
+  VersionAdded: '0.59'
+  VersionChanged: '0.85'
+  Include:
+    - "**/*.gemfile"
+    - "**/Gemfile"
+    - "**/gems.rb"
+  IgnoredGems: []
+  OnlyFor: []
+
+Bundler/GemFilename:
+  Description: Enforces the filename for managing gems.
+  Enabled: true
+  VersionAdded: '1.20'
+  EnforcedStyle: Gemfile
+  SupportedStyles:
+    - Gemfile
+    - gems.rb
+  Include:
+    - "**/Gemfile"
+    - "**/gems.rb"
+    - "**/Gemfile.lock"
+    - "**/gems.locked"
