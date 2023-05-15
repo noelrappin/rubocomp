@@ -41,11 +41,12 @@ module Rubocomp
           .uniq
           .compact
         next if settings.size == 1
+        groups = configurations.group_by { _1.setting_at(cop, field) }
+        next if groups.size == 1
         Result::DifferentSettings.new(
           cop,
           field,
-          configurations.group_by { _1.setting_at(cop, field) }
-            .transform_keys { Array(_1).join(",") }
+          groups.transform_keys { Array(_1).join(",") }
         )
       end.compact
     end

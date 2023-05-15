@@ -14,7 +14,7 @@ module Rubocomp
       def settings_with_names = settings.transform_values { _1.map(&:name) }
 
       def to_h
-        {cop_name => settings_with_names}
+        {cop_name => {field => settings_with_names}}
       end
     end
   end

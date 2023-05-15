@@ -11,9 +11,11 @@ module Rubocomp
 
     def load_configuration
       FileUtils.cd(dir_name) do
-        yaml_config = `rubocop --show-cops --format yaml`
+        #`bundle install`
+        #yaml_config = `bundle exec rubocop --show-cops --format yaml`
         # yaml_config = Open3.capture2("rubocop --show-cops --format yaml")
-        YAML.safe_load(yaml_config, permitted_classes: [Regexp, Symbol])
+        #YAML.safe_load(yaml_config, permitted_classes: [Regexp, Symbol])
+        YAML.safe_load_file(".comparison_rubocop.yml", permitted_classes: [Regexp, Symbol])
       end
     end
 

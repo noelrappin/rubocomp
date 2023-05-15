@@ -36,3 +36,14 @@ Bundler/GemFilename:
     - "**/gems.rb"
     - "**/Gemfile.lock"
     - "**/gems.locked"
+
+Rails/BulkChangeTable:
+  Description: Check whether alter queries are combinable.
+  Enabled: true
+  VersionAdded: '0.57'
+  Database:
+  SupportedDatabases:
+    - mysql
+    - postgresql
+  Include:
+    - db/migrate/*.rb

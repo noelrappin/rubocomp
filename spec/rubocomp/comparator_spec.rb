@@ -31,6 +31,7 @@ module Rubocomp
               Bundler/GemComment
               Bundler/GemFilename
               Bundler/GemVersion
+              Rails/BulkChangeTable
             ]
           )
         end
@@ -109,6 +110,12 @@ module Rubocomp
           expect(results.second.settings["**/Gemfile,**/gems.rb,**/Gemfile.lock,**/gems.locked"]
             .map { _1.dir_name }).to eq(["dir_one"])
           expect(results.second.settings["**/Gemfile"].map { _1.dir_name }).to eq(["dir_two"])
+        end
+
+        it "works when the configuration has a blank element" do
+          expect(comparator.compare_all_at("Rails/BulkChangeTable")).to have(1).result
+          result = comparator.compare_all_at("Rails/BulkChangeTable").first
+          expect(result).to be_identical
         end
       end
     end
