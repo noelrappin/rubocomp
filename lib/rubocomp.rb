@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
+require "active_support/all"
 require "awesome_print"
 require "fileutils"
+require "open3"
+require "rubocop"
 require "yaml"
-require "active_support/all"
 require_relative "rubocomp/version"
 
 require "zeitwerk"

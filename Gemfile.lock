@@ -4,6 +4,7 @@ PATH
     rubocomp (0.1.0)
       activesupport
       awesome_print
+      rubocop
       zeitwerk
 
 GEM
@@ -97,6 +98,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-darwin-22
 
 DEPENDENCIES
   pry-byebug

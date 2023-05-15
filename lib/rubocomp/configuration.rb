@@ -10,8 +10,11 @@ module Rubocomp
     def name = dir_name.split("/").last
 
     def load_configuration
-      yaml_config = `cd #{dirname} && rubocop --show-cops --format yaml`
-      YAML.safe_load(yaml_config, permitted_classes: [Regexp, Symbol])
+      FileUtils.cd(dir_name) do
+        yaml_config = `rubocop --show-cops --format yaml`
+        # yaml_config = Open3.capture2("rubocop --show-cops --format yaml")
+        YAML.safe_load(yaml_config, permitted_classes: [Regexp, Symbol])
+      end
     end
 
     def init_configuration

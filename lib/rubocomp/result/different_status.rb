@@ -16,7 +16,7 @@ module Rubocomp
       def disabled_names = disabled.map { _1.name }
 
       def to_h
-        {cop_name => {enabled: enabled_names, disabled: disabled_names}}
+        {cop_name => {enabled: enabled, disabled: disabled}}
       end
     end
   end

@@ -11,6 +11,7 @@ module Rubocomp
       Safe
       SafeAutoCorrect
       SupportedStyles
+      Exclude
     ]
 
     def initialize(cop, configurations)
@@ -53,8 +54,8 @@ module Rubocomp
       return Result::Identical.new(cop) if enabled.empty? || disabled.empty?
       Result::DifferentStatus.new(
         cop,
-        enabled: enabled.map(&:dir_name),
-        disabled: disabled.map(&:dir_name)
+        enabled: enabled.map(&:name),
+        disabled: disabled.map(&:name)
       )
     end
 

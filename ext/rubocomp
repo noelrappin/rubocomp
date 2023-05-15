@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-require "rubocomp"
+require_relative "../lib/rubocomp"
 Rubocomp::Runner.new.execute(ARGV)
